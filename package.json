@@ -1,0 +1,26 @@
+{
+  "name": "nestedconstructorsnode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanganu/nestedconstructorsnode.git"
+  },
+  "keywords": [
+    "Nested",
+    "constructors"
+  ],
+  "author": "Sangeetha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sanganu/nestedconstructorsnode/issues"
+  },
+  "homepage": "https://github.com/Sanganu/nestedconstructorsnode#readme",
+  "dependencies": {
+    "inquirer": "^6.5.1"
+  }
+}
