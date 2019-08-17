@@ -5,16 +5,19 @@ var questionAns =[
         answer: "true"
     },
     {
-        question:"question1",
+        question:"question2",
         answer: "true"
     },
     {
-        question:"question1",
+        question:"question3",
         answer: "true"
     },
     {
-        question:"question1",
+        question:"question4",
         answer: "true"
     }
 ]
-var myGame = new Game(questionAns);
+const myGame = new Game(questionAns);
+//myGame.checkUserResponse(true); //Error
+
+myGame.startQuiz();
