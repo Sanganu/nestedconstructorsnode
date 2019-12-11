@@ -14,6 +14,10 @@ class Engineer extends Employee{
     getHtml(){
         console.log(super.getName());
         console.log(super.getEmail());
+        return({
+            name:super.getName(),
+            email:super.getEmail()
+        })
     }
 }
 

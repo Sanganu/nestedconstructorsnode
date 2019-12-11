@@ -1,4 +1,4 @@
- engineer =(data) =>{
+ genEngineer =(data) =>{
      return(`<div class="card">
      <div class="card-body">
          <div class="card-title">
@@ -17,5 +17,5 @@
 
 }
 
-module.exports = engineer;
+module.exports = genEngineer;
 
