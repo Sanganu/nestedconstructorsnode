@@ -148,20 +148,21 @@ function getManagerDetails(){
             email: teammanager.getEmail(),
             role: teammanager.getRole(),
             name:teammanager.getName(),
-            id: temamanager.getId(),
+            id: teammanager.getId(),
             office: teammanager.getOfficeNumber()
 
         }
         return genManager(data);
-        team.push(teammanger);
+       // team.push(teammanger);
     })
     .then(html =>{
-        fs.writeFile("teamhtml.html",html,function(err){
+        console.log("The Manager",html)
+        fs.writeFile("./templates/teamhtml.html",html,function(err,result){
             if(err){
                 console.log("Error",err)
             }
             else{
-                console.log("Manager html written")
+                console.log("Manager html written",result)
                 displayMenu();
             }
         })
@@ -190,31 +191,20 @@ function getEngineerDetails(){
 }
 
 
-function generateTeamHtml(){
-   for(let i =0;i<team.length;i++){
-        console.log(team[i])
-      switch(team[i]){
-          case "Manager":
-               console.log("MAnager");
-          case "Engineer":
-               console.log("Engineer");
-          case "Intern" :
-               console.log("Intern")
-      }
-   }
-}
-
 
 function generateTeamHtml(){
-    let template = fs.readFileSync(path.resolve("templates","basictemplate.html"),"utf8");
-    let teamGenHtml = fs.readFileSync(path.resolve("teamplates","teamhtml.html"),"utf8");
-    const pattern = new RegExp("{{"+"team"+"}}");
+    console.log("generate html")
+    let template = fs.readFileSync("./templates/basictemplate.html","utf8");
+    let teamGenHtml = fs.readFileSync("./templates/teamhtml.html","utf8");
+    console.log("Read",teamGenHtml);
+    console.log("Read",template)
+    const pattern = new RegExp("{{ "+"teamdetails"+" }}");
     let output = template.replace(pattern,teamGenHtml)
     fs.writeFileSync("index.html",output)
 }
 //Main Program
-console.log("===========================");
-console.log("Welcome to Team creation app");
-console.log("==============================");
+console.log("==============================================");
+console.log("           Welcome to Team creation app");
+console.log("===============================================");
 console.log("Enter Manager details for the team");
 getManagerDetails();
