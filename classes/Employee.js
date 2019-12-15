@@ -16,3 +16,5 @@ class Employee{
 }
 
 module.exports = Employee;
+
+//Get and set methods need to be explored

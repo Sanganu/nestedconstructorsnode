@@ -5,6 +5,8 @@ const Engineer = require("./classes/Engineer");
 const Manager = require("./classes/Manager");
 const Intern = require("./classes/Intern");
 const genManager = require("./templates/manager");
+const genEngineer = require("./templates/engineer");
+const genIntern = require("./templates/intern");
 
 let engineers = [];
 let interns = [];
@@ -128,8 +130,26 @@ function getInternDetails(){
     inquirer.prompt(memberQuestions)
     .then((memberdata) => {
         const intern = new Intern(memberdata.name,memberdata.id,memberdata.email,memberdata.school)
-        team.push(intern);
-        displayMenu();
+       // team.push(intern);
+       let data = {
+           name: intern.getName(),
+           id:intern.getId(),
+           email:intern.getEmail(),
+           school:intern.getSchool()
+       }
+       return genIntern(data)
+       
+    })
+    .then(html => {
+        fs.appendFile("./templates/teamhtml",html,function(err,result){
+            if (err){
+                console.log("Error in ",err)
+            }
+            else{
+                console.log("REsult",result);
+                displayMenu();
+            }
+        })
     })
     .catch((error) => {
         console.log("Error in getting Team member details",error)
@@ -181,9 +201,25 @@ function getEngineerDetails(){
     inquirer.prompt(engineerQuestions)
     .then(memberdata => {
         const engineer = new Engineer(memberdata.name,memberdata.id,memberdata.email,memberdata.github);
-
-        team.push(engineer);
-        displayMenu();
+        let data = {
+            name: engineer.getName(),
+            id:engineer.getId(),
+            email:engineer.getEmail(),
+            github:engineer.getGitHub()
+        }
+       // team.push(engineer);
+        return genEngineer(data)
+    })
+    .then(html =>{
+        fs.appendFile("./templates/teamhtml.html",html,function(err,result){
+            if (err) {
+                console.log('Error in writing to the file',err)
+            }
+            else{
+                console.log("REsult",result);
+                displayMenu();
+            }
+        });
     })
     .catch(error => {
         console.log("Error in getting Engineer data",error)

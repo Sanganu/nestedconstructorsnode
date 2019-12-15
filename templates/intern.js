@@ -17,3 +17,5 @@ genIntern = (data) => {
     `
     )
 }
+
+module.exports = genIntern;
