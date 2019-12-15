@@ -3,14 +3,14 @@ genIntern = (data) => {
     <div class="card">
     <div class="card-body">
         <div class="card-title">
-        Name:${name}
+        Name:${data.name}
         </div> 
         <div class="card-subtitle mb-2 text-muted">
         Intern    </div>
         <div class="card-text">
-            Email:${email}
-            ID:${id}
-            School:${school}
+            Email:${data.email}
+            ID:${data.id}
+            School:${data.school}
         </div>
     </div>
     </div>

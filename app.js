@@ -141,7 +141,7 @@ function getInternDetails(){
        
     })
     .then(html => {
-        fs.appendFile("./templates/teamhtml",html,function(err,result){
+        fs.appendFile("./templates/teamhtml.html",html,function(err,result){
             if (err){
                 console.log("Error in ",err)
             }
