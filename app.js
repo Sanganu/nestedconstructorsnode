@@ -205,7 +205,8 @@ function getEngineerDetails(){
             name: engineer.getName(),
             id:engineer.getId(),
             email:engineer.getEmail(),
-            github:engineer.getGitHub()
+            github:engineer.getGitHub(),
+            role:engineer.getRole()
         }
        // team.push(engineer);
         return genEngineer(data)

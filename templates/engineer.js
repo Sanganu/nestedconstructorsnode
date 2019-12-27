@@ -8,6 +8,7 @@
            Engineer
          </div>
          <div class="card-text">
+             Role:${data.role}
              Email:${data.email}
              Id:${data.id}
              Github:${data.github}
