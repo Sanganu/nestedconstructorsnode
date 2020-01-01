@@ -3,15 +3,15 @@ function genManager(data){
 <div class="card">
 <div class="card-body">
     <div class="card-title">
-       Name: ${data.name}
+       <h2>Name: ${data.name}</h2>
     </div>
     <div class="card-subtitle mb-2 text-muted">
-       Manager
+      <h3> Manager</h3>
     </div>
     <div class="card-text">
-        Email: ${data.email}
-        Id:${data.id}
-        Office Number:${data.office}
+       <p> Email: ${data.email}</p>
+        <p>Id:${data.id}</p>
+        <p>Office Number:${data.office}</p>
     </div>
 </div>
 </div>
