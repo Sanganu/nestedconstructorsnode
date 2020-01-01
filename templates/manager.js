@@ -1,6 +1,6 @@
 function genManager(data){
     return(`
-<div class="card">
+<div class="card mb-4 text-white bg-dark">
 <div class="card-body">
     <div class="card-title">
        <h2>Name: ${data.name}</h2>
